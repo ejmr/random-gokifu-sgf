@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+#
+# random-gokifu-sgf
+# =================
+#
+# ## DESCRIPTION
+# 
+# Fetches the URL of a random SGF file representing a Go game between
+# two professionals, and prints that URL to standard output where it is
+# suitable to use with something like `curl` and then into `sabaki`,
+# or whatever other SGF editor.
+#
+# You should have received a `README.md` file describing this script
+# in more detail.  If not, you can find it an the project website:
+#
+#     https://github.com/ejmr/random-gokifu-sgf
+#     
+########################################################################
+
+import sys
+import random
+import urllib.request
+from bs4 import BeautifulSoup
+
+# I believe http://gokifu.com/ has more than 1,500 pages of games
+# available.  However, that number will grow over time and I do not to
+# increment it for every individal game.  More importantly, each page
+# lists twenty-five games, giving us 37,500 potential games to download.
+page = random.randint(1, 1500)
+gokifu_url = "http://gokifu.com/?p={0}".format(page)
+
+# Read and parse the entire HTML of whichever page we selected.  We do
+# not attempt to catch any exceptions here (or anywhere) because there
+# is no acceptable, graceful fall-back behavior we can provide in the
+# event we cannot read or parse the HTML.
+with urllib.request.urlopen(gokifu_url) as response:
+    soup = BeautifulSoup(response.read(), "html.parser")
+
+# A list of every URL pointing to an SGF file.
+links_to_sgf = []
+
+# Given our parsed HTML document, find every `<a>` tag and see if its
+# `href` parameter has a URL ending with the `.sgf` extension.  If so,
+# that means the link points to a game and we therefore want to add it
+# to our `links_to_sgf`.
+for link in soup.find_all("a"):
+    href = link.get("href")
+    if href.endswith("sgf"):
+        links_to_sgf.append(href)
+
+# Now that we've populated `links_to_sgf` with the URLs for twenty-five
+# random URLs, we choose one and random and display that URL.
+print(random.choice(links_to_sgf))
+
+# Did we get here without triggering any errors or exceptions?  If so
+# then we can exit this script successfully and go about the business
+# of pretending to understand the level of play that professional Go
+# players demonstrate.
+sys.exit(0)
