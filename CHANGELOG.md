@@ -3,6 +3,11 @@ Changelog
 
 We document all notable changes to this project in this file.
 
+## [Unreleased]
+
+### Fixed
+- Some typos and formatting in the README
+
 ## [0.1.0] - 2018-05-02
 
 This is the initial implementation.  While it is already usable there

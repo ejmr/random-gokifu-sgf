@@ -28,5 +28,5 @@ This code belongs to the Public Domain.
 * [Python 3 Documentation](https://docs.python.org/3/)
 * [Beatiful Soup](https://www.crummy.com/software/BeautifulSoup/)
 * [cURL](https://curl.haxx.se/)
-* [Smart Game Gormat](http://www.red-bean.com/sgf/index.html)
-* [Sabaki](https://github.com/SabakiHQ/Sabaki): An SGF Viewer and Editor
+* [Smart Game Format](http://www.red-bean.com/sgf/index.html)
+* [Sabaki](https://github.com/SabakiHQ/Sabaki)
