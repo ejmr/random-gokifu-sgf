@@ -9,6 +9,7 @@ We document all notable changes to this project in this file.
 - Some typos and formatting in the README
 - Clarified that users cannot simply copy-paste the example command
   given in the README.
+- Correct two typos in the LICENSE document.
 
 ## [0.1.0] - 2018-05-02
 
