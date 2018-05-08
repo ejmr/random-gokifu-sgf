@@ -12,6 +12,11 @@ or whatever other SGF editor.
 
     $ curl `random-gokifu-sgf` -o game.sgf && sabaki game.sgf
 
+**Note:** The program `sabaki` does not accept a filename from
+the command-line like in this example.  The example is meant to be
+illustrative, and not something you should blindly copy-paste into
+your shell.
+
 ## REQUIREMENTS
 
 * Python 3

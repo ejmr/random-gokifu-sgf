@@ -7,6 +7,8 @@ We document all notable changes to this project in this file.
 
 ### Fixed
 - Some typos and formatting in the README
+- Clarified that users cannot simply copy-paste the example command
+  given in the README.
 
 ## [0.1.0] - 2018-05-02
 
