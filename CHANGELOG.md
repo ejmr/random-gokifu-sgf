@@ -3,7 +3,7 @@ Changelog
 
 We document all notable changes to this project in this file.
 
-## [Unreleased]
+## [0.2.0] - 2018-05-14
 
 ### Added
 - A list of required Python libraries to help installation.
