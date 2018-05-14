@@ -1,0 +1,6 @@
+# Requirements for `random-gokifu-sgf`, which relies on Python 3.6 or
+# later overall.  It may or may not work with older versions of Python 3.
+# We only test against version 3.6 and later.
+
+beautifulsoup4>=4.6.0
+urllib3>=1.22
